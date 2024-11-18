@@ -43,13 +43,6 @@ public class MainApp {
         userService.add(car4);
         userService.add(user4);
 
-        User user5 = new User("User5", "Lastname5", "user5@mail.ru");
-        Car car5 = new Car("haval", 6);
-        user5.setCar(car5);
-
-        userService.add(car5);
-        userService.add(user5);
-
         List<User> users = userService.listUsers();
         for (User user : users) {
             System.out.println("Id = " + user.getId());
@@ -61,14 +54,8 @@ public class MainApp {
             System.out.println("______________________________");
         }
 
-        List<User> usersModelSeries = userService.listUsersModelSeries("haval", 6);
-        for (User user : usersModelSeries) {
-            System.out.println("Id = " + user.getId());
-            System.out.println("First Name = " + user.getFirstName());
-            System.out.println("Last Name = " + user.getLastName());
-            System.out.println("Email = " + user.getEmail());
-            System.out.println("______________________________");
-        }
+        User user = userService.user("honda", 3);
+        System.out.println(user.toString());
 
         context.close();
     }

@@ -12,5 +12,5 @@ public interface UserService {
 
     List<User> listUsers();
 
-    List<User> listUsersModelSeries(String model, int series);
+    User user(String model, int series);
 }
